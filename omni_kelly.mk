@@ -8,6 +8,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
@@ -27,3 +29,6 @@ PRODUCT_BRAND := tecno
 PRODUCT_MODEL := kelly
 PRODUCT_MANUFACTURER := Tecno Mobile Limited
 PRODUCT_RELEASE_NAME := Tecno Spark 8C (kelly)
+
+TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 1612

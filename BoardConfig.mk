@@ -23,7 +23,7 @@ TARGET_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_USES_64_BIT_BINDER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := kelly, TECNO-KG5j
+TARGET_OTA_ASSERT_DEVICE := kelly,TECNO-KG5j
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := CY-KG5J-H6511-C
@@ -147,15 +147,12 @@ BOARD_USES_MTK_HARDWARE := true
 
 ## TWRP-Specific configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := R_11-BETA
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_USES_MKE2FS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1500
 TW_MAX_BRIGHTNESS := 4046
-TW_Y_OFFSET := 80
-TW_H_OFFSET := -60
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_PYTHON := false
 TW_INCLUDE_NANO := true
@@ -175,5 +172,5 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
 # PBRP
-PB_TORCH_PATH := /sys/devices/virtual/torch/torch/torch_level
+PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
 PB_TORCH_MAX_BRIGHTNESS := 2
