@@ -1,4 +1,4 @@
-# Twrp Recovery Tree for Tecno Spark 8C KG5j (kelly)
+# PBRP Tree for Tecno Spark 8C KG5j (kelly)
 ![Tecno Spark 8C KG5j (kelly)](https://fdn2.gsmarena.com/vv/pics/tecno/tecno-spark-8c-1.jpg)
 
 |Basic               |Spec Sheet|
