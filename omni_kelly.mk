@@ -18,11 +18,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 $(call inherit-product, device/tecno/kelly/device.mk)
 
 # Inherit some common twrp stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := kelly
-PRODUCT_NAME := twrp_kelly
+PRODUCT_NAME := omni_kelly
 PRODUCT_BRAND := tecno
 PRODUCT_MODEL := kelly
 PRODUCT_MANUFACTURER := Tecno Mobile Limited
