@@ -35,7 +35,7 @@ on init
     setprop vendor.usb.acm_port0 ""
     setprop vendor.usb.acm_port1 ""
     setprop vendor.usb.acm_enable 0
-    setprop otg.enabled 0
+    setprop ro.otg.enabled 0
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
@@ -66,7 +66,7 @@ on fs
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
     write /sys/class/android_usb/android0/f_ffs/aliases adb
     echo 1 > /sys/devices/platform/tran_battery/OTG_CTL
-    setprop otg.enabled 1
+    setprop ro.otg.enabled 1
 
 on property:sys.usb.config=none && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/UDC "none"
