@@ -151,11 +151,11 @@ TARGET_USES_MKE2FS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1500
-TW_MAX_BRIGHTNESS := 4046
+TW_MAX_BRIGHTNESS := 4000
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_PYTHON := false
-TW_INCLUDE_NANO := false
-TW_INCLUDE_LPDUMP := false
+TW_INCLUDE_NANO := true
+TW_INCLUDE_LPDUMP := true
 TW_EXCLUDE_APEX := true
 TW_EXTRA_LANGUAGES := false
 TW_INCLUDE_NTFS_3G := true
@@ -174,4 +174,4 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
 # PBRP
-PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
+PB_TORCH_PATH := "/sys/class/torch/torch/torch_level"
