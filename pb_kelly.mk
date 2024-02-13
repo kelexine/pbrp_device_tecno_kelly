@@ -24,7 +24,7 @@ $(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := kelly
-PRODUCT_NAME := omni_kelly
+PRODUCT_NAME := pb_kelly
 PRODUCT_BRAND := tecno
 PRODUCT_MODEL := kelly
 PRODUCT_MANUFACTURER := Tecno Mobile Limited
@@ -33,3 +33,4 @@ PRODUCT_RELEASE_NAME := Tecno Spark 8C (kelly)
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1612
 MAINTAINER := "kelexine"
+PB_MAINTAINER := "kelexine"
