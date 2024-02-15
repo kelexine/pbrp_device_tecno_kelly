@@ -19,9 +19,9 @@ jobs:
             mkdir -p ~/android/pbrp
             cd ~/android/pbrp
             mkdir -p ~/bin
-            curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
-            chmod a+x /usr/bin/repo
-            sudo ln -sf /usr/bin/repo ~/bin/repo
+            curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+            chmod a+x ~/bin/repo
+            export PATH=$PATH:~/bin/
             git config --global user.name "kelexine"
             git config --global user.email "frankiekelechi@gmail.com"
             repo init --depth=1 -u https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-11.0
