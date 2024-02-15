@@ -19,7 +19,7 @@ jobs:
             mkdir -p ~/android/pbrp
             cd ~/android/pbrp
             mkdir -p ~/bin
-            sudo curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
+            curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
             chmod a+x /usr/bin/repo
             sudo ln -sf /usr/bin/repo ~/bin/repo
             git config --global user.name "kelexine"
