@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Setup Environment
+          name: Setup Build Environment
           command: |
             wget https://github.com/cli/cli/releases/download/v2.40.1/gh_2.40.1_linux_amd64.deb -O gh.deb
             sudo dpkg -i gh.deb
@@ -25,28 +25,27 @@ jobs:
             git config --global user.name "kelexine"
             git config --global user.email "frankiekelechi@gmail.com"
             repo init --depth=1 -u https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-11.0
-            repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j20
+            repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all)
       - run:
           name: Clone Device Tree
           command: |
             cd ~/android/pbrp
             git clone https://github.com/kelexine/pbrp_device_tecno_kelly -b android-11 device/tecno/kelly
       - run:
-          name: Start pbrp Build
+          name: Start PitchBlack Recovery Build
           command: |
             cd ~/android/pbrp
             source build/envsetup.sh
             lunch omni_kelly-eng
-            croot
             mka bootimage -j$(nproc --all)
-            mka pbrp
+            ls $OUT
             echo $CIRCLE_BUILD_NUM
       - run:
-          name: Upload To GitHub
+          name: Upload To GitHub Release
           command: |
             cd ~/android/pbrp
             cd device/tecno/kelly
-            gh release create $CIRCLE_BUILD_NUM --latest --notes "This build is still in testing phase, so flash at your own risk" --title "pbrp recovery Build for Tecno Spark 8C (kelly)"  ~/android/pbrp/out/target/product/kelly/*.img
+            gh release create $CIRCLE_BUILD_NUM --latest --notes "This build is still in testing phase, so flash at your own risk" --title "PitchBlack recovery Build for Tecno Spark 8C (kelly)"  ~/android/pbrp/out/target/product/kelly/*.img
             gh release upload $CIRCLE_BUILD_NUM ~/android/pbrp/out/target/product/kelly/*.zip
       - store_artifacts:
             path: |
